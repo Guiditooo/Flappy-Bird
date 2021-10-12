@@ -22,21 +22,21 @@ namespace game
 
 	void updateGameplayScreen()
 	{
-		int velocityEnemy = 50;
-		int velocityPlayer = 8500;
+		int velocityEnemy = 500;
+		int velocityPlayer = 1500;
 
 		enemy.x -= velocityEnemy * GetFrameTime();
 
-		if (IsKeyPressed(KEY_S))
+		if (IsKeyDown(KEY_S))
 		{
 			player.y += velocityPlayer * GetFrameTime();
 		}
-		if (IsKeyPressed(KEY_W))
+		if (IsKeyDown(KEY_W))
 		{
 			player.y -= velocityPlayer * GetFrameTime();
 		}
 
-		if (CheckCollisionRecs(player, enemy) || enemy.x == 0)
+		if (CheckCollisionRecs(player, enemy) || enemy.x < 0)
 		{
 			player.x = 10; player.y = GetScreenHeight() - 200;
 
