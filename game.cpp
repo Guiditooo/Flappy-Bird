@@ -1,17 +1,13 @@
 #include "raylib.h"
 #include "game.h"
 #include "Menu.h"
+#include "credits.h"
 #include "Gameplay.h"
+#include "enums.h"
 
 namespace game
 {
-	enum Screen
-	{
-		menu,
-		gameplay
-	};
-
-	static Screen currentScreen;
+	Screen currentScreen;
 
 	static void init();
 	static void update();
@@ -34,11 +30,12 @@ namespace game
 
 	static void init()
 	{
-		InitWindow(640, 480, "Asteroid");
+		InitWindow(640, 480, "Flappy Birds");
 
 		currentScreen = menu;
 
 		initMenuScreen();
+		initCreditsScreen();
 		initGameplayScreen();
 	}
 
@@ -47,10 +44,16 @@ namespace game
 		switch (currentScreen)
 		{
 		case menu:
-			updateMenuScreen();
+			updateMenuScreen(currentScreen);
 			break;
 		case gameplay:
 			updateGameplayScreen();
+			break;
+		case credits:
+			updateCreditsScreen(currentScreen);
+			break;
+		case exit:
+		
 			break;
 		}
 	}
@@ -66,6 +69,12 @@ namespace game
 			break;
 		case gameplay:
 			drawGameplayScreen();
+			break;
+		case credits:
+			drawCreditsScreen();
+			break;
+		case exit:
+			close(); //Modificar por alguna variable que termine el while
 			break;
 		}
 

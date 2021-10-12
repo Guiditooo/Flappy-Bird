@@ -2,15 +2,15 @@
 
 #include "raylib.h"
 
-static void setButtons(Rectangle& rectangle, int sizeX, int sizeY, int height);
-static bool updateButtons(Rectangle& rectangle);
-
 namespace game
 {
+	static void setButtons(Rectangle& rectangle, int sizeX, int sizeY, int height);
+	void updateButtons(Rectangle& buttton1, Rectangle& buttton2, Rectangle& buttton3, Screen& currenScreen);
+
 	static Rectangle button1;
 	static Rectangle button2;
 	static Rectangle button3;
-	static Rectangle button4;
+
 
 
 	void initMenuScreen()
@@ -20,65 +20,56 @@ namespace game
 		setButtons(button1, sizeX, sizeY, 150);
 		setButtons(button2, sizeX, sizeY, 225);
 		setButtons(button3, sizeX, sizeY, 300);
-		setButtons(button4, sizeX, sizeY, 375);
 	}
-
-	void updateMenuScreen()
+	void updateMenuScreen(Screen& currentScreen)
 	{
-		if (updateButtons(button1))
-		{
-			//Llamar al play
-
-		}
-		if (updateButtons(button2))
-		{
-			// LLAmar creditos.
-
-		}
-		if (updateButtons(button3))
-		{
-			//Close Windows
-
-		}
-
-
+		updateButtons(button1, button2, button3, currentScreen);
+		
 	}
 
 	void drawMenuScreen()
 	{
-
 		int fontSize = 30;
 		ClearBackground(BLACK);
-		DrawText("ASTEROID", GetScreenWidth() / 2 - 150, 50, 60, YELLOW);
+
+		DrawText("Flappy Birds", GetScreenWidth() / 2 - 200, 50, 60, YELLOW);
+
 		DrawRectangleRec(button1, ORANGE);
 		DrawText("PLAY", button1.x + button1.width / 2 - MeasureText("PLAY", fontSize) / 2, button1.y + fontSize / 2, fontSize, YELLOW);
+
 		DrawRectangleRec(button2, ORANGE);
 		DrawText("CREDITS", button2.x + button2.width / 2 - MeasureText("CREDITS", fontSize) / 2, button2.y + fontSize / 2, fontSize, YELLOW);
+
 		DrawRectangleRec(button3, ORANGE);
 		DrawText("EXIT", button3.x + button3.width / 2 - MeasureText("EXIT", fontSize) / 2, button3.y + fontSize / 2, fontSize, YELLOW);
-		DrawRectangleRec(button4, ORANGE);
-
+	
+		DrawText("Version 0.1", GetScreenWidth() - MeasureText("Version 0.1", 15), GetScreenHeight() - 15, 15, RED);
 	}
-}
 
-static void setButtons(Rectangle& rectangle, int sizeX, int sizeY, int height)
-{
-	rectangle.height = sizeY;
-	rectangle.width = sizeX;
-	rectangle.x = (GetScreenWidth() / 2) - (sizeX / 2);
-	rectangle.y = height;
-}
-static bool updateButtons(Rectangle& rectangle)
-{
-	if (GetMousePosition().x > rectangle.x && GetMousePosition().x < rectangle.x + rectangle.width)
+
+	static void setButtons(Rectangle& rectangle, int sizeX, int sizeY, int height)
 	{
-		if (GetMousePosition().y > rectangle.y && GetMousePosition().y < rectangle.y + rectangle.height)
+		rectangle.height = sizeY;
+		rectangle.width = sizeX;
+		rectangle.x = (GetScreenWidth() / 2) - (sizeX / 2);
+		rectangle.y = height;
+	}
+	static void updateButtons(Rectangle& buttton1, Rectangle& buttton2, Rectangle& buttton3, Screen& currentScreen)
+	{
+		if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 		{
-			if (IsMouseButtonPressed(3))
+			if (CheckCollisionPointRec(GetMousePosition(), button1))
 			{
-				return true;
+				currentScreen = gameplay;
+			}
+			else if (CheckCollisionPointRec(GetMousePosition(), button2))
+			{
+				currentScreen = credits;
+			}
+			else if (CheckCollisionPointRec(GetMousePosition(), button3))
+			{
+				currentScreen = exit;
 			}
 		}
-
 	}
 }
