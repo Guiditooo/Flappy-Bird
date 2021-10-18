@@ -25,6 +25,12 @@
     <Filter Include="Creditos">
       <UniqueIdentifier>{32150f94-b918-4d55-980f-bed23df3c988}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{3c0d497f-51d9-41a3-b47b-0535834dc7bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Backgorund">
+      <UniqueIdentifier>{b6e9b92f-2f0d-44af-91ff-ca3346e87297}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -42,6 +48,12 @@
     <ClCompile Include="gameplay.cpp">
       <Filter>Gameplay</Filter>
     </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="paralax.cpp">
+      <Filter>Backgorund</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -58,6 +70,12 @@
     </ClInclude>
     <ClInclude Include="enums.h">
       <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="paralax.h">
+      <Filter>Backgorund</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,5 +1,7 @@
-#include "raylib.h"
 #include "game.h"
+
+#include "raylib.h"
+
 #include "Menu.h"
 #include "credits.h"
 #include "Gameplay.h"

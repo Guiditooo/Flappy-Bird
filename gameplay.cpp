@@ -1,57 +1,40 @@
 #include "gameplay.h"
+
 #include "raylib.h"
 
+#include "player.h"
+#include "paralax.h"
 
 
 namespace game
 {
-	Rectangle player;
-	Rectangle enemy;
 
 	void initGameplayScreen()
 	{
-		int size = 40;
-		
-		player.width = size; player.height = size; 
-		player.x = 10; player.y = GetScreenHeight() - 200;
-
-		enemy.width = size; enemy.height = size;
-		enemy.x = GetScreenWidth() ; enemy.y = GetRandomValue(0, GetScreenHeight());
-
+		initPlayer();
+		initParalax();
 	}
 
 	void updateGameplayScreen()
 	{
-		int velocityEnemy = 500;
-		int velocityPlayer = 1500;
-
-		enemy.x -= velocityEnemy * GetFrameTime();
-
-		if (IsKeyDown(KEY_S))
-		{
-			player.y += velocityPlayer * GetFrameTime();
-		}
-		if (IsKeyDown(KEY_W))
-		{
-			player.y -= velocityPlayer * GetFrameTime();
-		}
-
-		if (CheckCollisionRecs(player, enemy) || enemy.x < 0)
-		{
-			player.x = 10; player.y = GetScreenHeight() - 200;
-
-			enemy.x = GetScreenWidth(); enemy.y = GetRandomValue(0, GetScreenHeight());
-
-		}
+		
+		updatePlayer();
+		updateParalax();
 	}
 
 	void drawGameplayScreen()
 	{
 		ClearBackground(BLACK);
 	
-		DrawRectangleRec(player, BLUE);
-		DrawRectangleRec(enemy, RED);
-
+		drawParalax();
+		drawPlayer();
 	}
-
+	void unloadTextures()
+	{
+		unloadPlayerTexture();
+		unloadParalaxTextures();
+	}
 }
+//Praralax = https://opengameart.org/content/forest-parallax
+//Posible animacion = https://opengameart.org/content/bird-and-explosion
+//   ""      ""     = https://opengameart.org/content/bird-cute-bird

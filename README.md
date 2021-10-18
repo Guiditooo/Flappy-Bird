@@ -1,6 +1,6 @@
 En esto proyecto se va a replicar el juego "flappy birds" hecho con la libreria grafica de Raylib.
 
-Esta sera la version 0.1 por lo que en sus consignas sera reducidas
+Esta sera la version 0.1 por lo que sus consignas seran reducidas
 
 Sprint 1 (martes 5/10 a martes 12/10) - Tareas a realizar:
 ● Crear un nuevo proyecto vacío de C++ e integrar la biblioteca de programación raylib
