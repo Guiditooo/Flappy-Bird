@@ -43,7 +43,7 @@ namespace game
 		DrawRectangleRec(button3, ORANGE);
 		DrawText("EXIT", button3.x + button3.width / 2 - MeasureText("EXIT", fontSize) / 2, button3.y + fontSize / 2, fontSize, YELLOW);
 	
-		DrawText("Version 0.1", GetScreenWidth() - MeasureText("Version 0.1", 15), GetScreenHeight() - 15, 15, RED);
+		DrawText("Version 0.2", GetScreenWidth() - MeasureText("Version 0.2", 15), GetScreenHeight() - 30, 15, RED);
 	}
 
 

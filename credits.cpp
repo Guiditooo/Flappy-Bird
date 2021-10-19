@@ -38,6 +38,6 @@ namespace game
 		DrawText("Ramiro Guzman ", 0, 225, fontSize, BLUE);
 
 
-		DrawText("Version 0.1", GetScreenWidth() - MeasureText("Version 0.1", fontSize), GetScreenHeight() - fontSize, fontSize, RED);
+		DrawText("Version 0.2", GetScreenWidth() - MeasureText("Version 0.2", fontSize), GetScreenHeight() - 40, fontSize, RED);
 	}
 }
