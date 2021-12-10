@@ -41,13 +41,13 @@ namespace game
 				{
 					gameOver = true;
 				}
+				frameCounter += GetFrameTime();
+				timer = static_cast<int>(frameCounter);
 			}
 			if (IsKeyPressed(KEY_P))
 			{
 				paused = !paused;
 			}
-			frameCounter += GetFrameTime();
-			timer = static_cast<int>(frameCounter);
 		}
 		else
 		{
