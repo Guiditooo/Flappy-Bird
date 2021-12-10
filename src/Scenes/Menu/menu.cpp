@@ -45,7 +45,13 @@ namespace game
 		DrawRectangleRec(button3, ORANGE);
 		DrawText("EXIT", static_cast<int>(button3.x + static_cast<int>(button3.width / 2) - static_cast<float>(MeasureText("EXIT", fontSize) / 2)), static_cast<int>(button3.y + static_cast<float>(fontSize) / 2), fontSize, YELLOW);
 	
-		DrawText("Version 0.3", GetScreenWidth() - MeasureText("Version 0.3", 15), GetScreenHeight() - 30, 15, RED);
+		DrawText("P1", FRAME_WIDTH / 4 / 2 - MeasureText("P1", 30) / 2, FRAME_HEIGHT / 2, 30, RED);
+		DrawText("SPACE", FRAME_WIDTH / 4 / 2 - MeasureText("SPACE", 30) / 2, FRAME_HEIGHT / 2 + 40, 30, RED);
+
+		DrawText("P2", FRAME_WIDTH - FRAME_WIDTH / 4 / 2 - MeasureText("P2", 30) / 2, FRAME_HEIGHT / 2, 30, SKYBLUE);
+		DrawText("ARROW UP", FRAME_WIDTH - FRAME_WIDTH / 4 / 2 - MeasureText("ARROW UP", 30) / 2, FRAME_HEIGHT / 2 + 40, 30, SKYBLUE);
+
+		DrawText("Version 1.0", GetScreenWidth() - MeasureText("Version 1.0", 25), GetScreenHeight() - 30, 25, RED);
 	}
 
 

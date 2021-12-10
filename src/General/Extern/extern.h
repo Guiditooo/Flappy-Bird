@@ -19,6 +19,7 @@ namespace game
 	extern bool playing;
 
 	extern bool multiplayer;
+	extern bool playerOneWins;
 
 	extern bool startedGameplay;
 

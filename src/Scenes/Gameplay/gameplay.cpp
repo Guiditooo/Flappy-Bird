@@ -3,6 +3,7 @@
 #include "raylib.h"
 
 #include <iostream>
+#include <string>
 
 #include "Player/player.h"
 #include "Parallax/parallax.h"
@@ -10,9 +11,10 @@
 
 
 namespace game
-{
+{	
 
-	
+	int timer = 0;
+	float frameCounter = 0;
 
 	void initGameplayScreen()
 	{
@@ -44,6 +46,8 @@ namespace game
 			{
 				paused = !paused;
 			}
+			frameCounter += GetFrameTime();
+			timer = static_cast<int>(frameCounter);
 		}
 		else
 		{
@@ -69,6 +73,11 @@ namespace game
 		drawTubes();
 		drawPlayers();
 
+		DrawText("Press P to pause/unpause", FRAME_WIDTH / 2 - MeasureText("Press P to pause/unpause",20) / 2, 0, 20, GREEN);
+		
+		if(!multiplayer)
+			DrawText(&std::to_string(timer)[0], FRAME_WIDTH - MeasureText(&std::to_string(timer)[0], 25), 0, 25, GREEN);
+
 		if (paused) 
 		{
 			//std::cout << "ENTREE";
@@ -81,6 +90,24 @@ namespace game
 			DrawText("GAME OVER", FRAME_WIDTH / 2 - MeasureText("GAME OVER", 52) / 2, FRAME_HEIGHT / 4, 52, RAYWHITE);
 			DrawText("R - RETRY", FRAME_WIDTH / 2 - MeasureText("R - RETRY", 52) / 2, FRAME_HEIGHT / 2, 52, RAYWHITE);
 			DrawText("M - MENU", FRAME_WIDTH / 2 - MeasureText("M - MENU", 52) / 2, FRAME_HEIGHT * 3 / 4 - 52, 52, RAYWHITE);
+
+			if (multiplayer)
+			{
+				if (playerOneWins)
+				{
+					DrawText("WINNER: RED", FRAME_WIDTH / 2 - MeasureText("WINNER: RED", 40) / 2, FRAME_HEIGHT / 3 + 20, 40, RAYWHITE);
+				}
+				else
+				{
+					DrawText("WINNER: BLUE", FRAME_WIDTH / 2 - MeasureText("WINNER: BLUE", 40) / 2, FRAME_HEIGHT / 3 + 20, 40, RAYWHITE);
+				}
+			}
+			else
+			{
+				std::string text = "You leasted " + std::to_string(timer) + " s.";
+				DrawText(&text[0], FRAME_WIDTH / 2 - MeasureText(&text[0], 36) / 2, FRAME_HEIGHT / 3 + 20, 36, RAYWHITE);
+			}
+
 		}
 
 	}
@@ -95,6 +122,8 @@ namespace game
 		gameOver = false;
 		paused = false;
 		initGameplayScreen();
+		timer = 0;
+		frameCounter = 0.0f;
 	}
 
 	

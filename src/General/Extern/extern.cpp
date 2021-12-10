@@ -13,6 +13,7 @@ namespace game
 	bool playing = true;
 
 	bool multiplayer = true;
+	bool playerOneWins = true;
 
 	bool startedGameplay = false;
 

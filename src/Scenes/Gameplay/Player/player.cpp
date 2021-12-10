@@ -86,11 +86,55 @@ namespace game
 		bool ret = false;
 		if (multiplayer)
 		{
-			ret = player1.checkCollisions(obstacle) || player2.checkCollisions(obstacle);
+			bool p1 = player1.checkCollisions(obstacle);
+			bool p2 = player2.checkCollisions(obstacle);
+
+			if (p1)
+			{
+				playerOneWins = false;
+			} else if (p2)
+			{
+				playerOneWins = true;
+			}
+
+			ret = p1 || p2;
+
+			if (player1.player.y < 0)
+			{
+				gameOver = true;
+				playerOneWins = false;
+			}
+			else if (player1.player.y + player1.player.height > FRAME_HEIGHT)
+			{
+				gameOver = true;
+				playerOneWins = false;
+			}
+			else if (player2.player.y < 0)
+			{
+				gameOver = true;
+				playerOneWins = true;
+			}
+			else if (player2.player.y + player2.player.height > FRAME_HEIGHT)
+			{
+				gameOver = true;
+				playerOneWins = true;
+			}
+			
 		}
 		else
 		{
 			ret = player1.checkCollisions(obstacle);
+
+			if (player1.player.y < 0)
+			{
+				gameOver = true;
+			}
+
+			if (player1.player.y + player1.player.height > FRAME_HEIGHT)
+			{
+				gameOver = true;
+			}
+
 		}
 		
 		return ret;

@@ -38,18 +38,6 @@ namespace game
 
 		player.y += velocity * GetFrameTime();
 
-		if (player.y < 0)
-		{
-			gameOver = true;
-		}
-
-		if (player.y + player.height > FRAME_HEIGHT)
-		{
-			gameOver = true;
-		}
-
-
-
 		position.x = player.x;
 		position.y = player.y;
 	}
@@ -57,8 +45,8 @@ namespace game
 	void PlayerStruct::drawPlayer(Color color)
 	{
 		ClearBackground(BLACK);
-		DrawTextureRec(character, frameRec, position, WHITE);
-		DrawRectangleRec(player, color);
+		DrawTextureRec(character, frameRec, position, color);
+		//DrawRectangleRec(player, color);
 	}
 
 	void PlayerStruct::unloadPlayerTexture()
