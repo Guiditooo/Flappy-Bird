@@ -24,7 +24,7 @@ namespace game
 		{
 			update();
 			draw();
-		} while (playing);
+		} while (playing && !WindowShouldClose());
 
 		CloseWindow();
 	}
