@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -17,6 +17,32 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\General\Extern\extern.cpp" />
+    <ClCompile Include="src\General\TextureX\textureX.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Scenes\Credits\credits.cpp" />
+    <ClCompile Include="src\Scenes\Gameplay\gameplay.cpp" />
+    <ClCompile Include="src\Scenes\Gameplay\Game\game.cpp" />
+    <ClCompile Include="src\Scenes\Gameplay\Parallax\parallax.cpp" />
+    <ClCompile Include="src\Scenes\Gameplay\Player\player.cpp" />
+    <ClCompile Include="src\Scenes\Gameplay\Player\PlayerStruct\playerStruct.cpp" />
+    <ClCompile Include="src\Scenes\Gameplay\Tube\tube.cpp" />
+    <ClCompile Include="src\Scenes\Menu\menu.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\General\Enums\enums.h" />
+    <ClInclude Include="src\General\Extern\extern.h" />
+    <ClInclude Include="src\General\TextureX\textureX.h" />
+    <ClInclude Include="src\Scenes\Credits\credits.h" />
+    <ClInclude Include="src\Scenes\Gameplay\gameplay.h" />
+    <ClInclude Include="src\Scenes\Gameplay\Game\game.h" />
+    <ClInclude Include="src\Scenes\Gameplay\Parallax\parallax.h" />
+    <ClInclude Include="src\Scenes\Gameplay\Player\player.h" />
+    <ClInclude Include="src\Scenes\Gameplay\Player\PlayerStruct\playerStruct.h" />
+    <ClInclude Include="src\Scenes\Gameplay\Tube\tube.h" />
+    <ClInclude Include="src\Scenes\Menu\menu.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -92,34 +118,37 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)lib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)lib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalUsingDirectories>
       </AdditionalUsingDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>raylib.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib</AdditionalDependencies>
-      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)lib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib\include;%(AdditionalIncludeDirectories);$(SolutionDir)src</AdditionalIncludeDirectories>
       <AdditionalUsingDirectories>
       </AdditionalUsingDirectories>
       <WholeProgramOptimization>false</WholeProgramOptimization>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -128,6 +157,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>raylib.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib</AdditionalDependencies>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -165,24 +195,6 @@
       <AdditionalDependencies>raylib.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="credits.cpp" />
-    <ClCompile Include="game.cpp" />
-    <ClCompile Include="gameplay.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="menu.cpp" />
-    <ClCompile Include="paralax.cpp" />
-    <ClCompile Include="player.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="credits.h" />
-    <ClInclude Include="enums.h" />
-    <ClInclude Include="game.h" />
-    <ClInclude Include="gameplay.h" />
-    <ClInclude Include="menu.h" />
-    <ClInclude Include="paralax.h" />
-    <ClInclude Include="player.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -5,77 +5,108 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Archivos de encabezado">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{69175a59-2d15-41af-86c1-b5c9456ef257}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de recursos">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="General">
+      <UniqueIdentifier>{9e1e0fec-082d-48ea-a8fd-3b3f55921dfc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameManager">
-      <UniqueIdentifier>{89619c96-d34a-4b3f-a084-c9ef8f4c7315}</UniqueIdentifier>
+    <Filter Include="Scene\Credits">
+      <UniqueIdentifier>{869b2692-4fe7-44e9-9197-6a81af0e39c0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Menu">
-      <UniqueIdentifier>{5825e189-1950-49f0-9641-3d95a07fbb07}</UniqueIdentifier>
+    <Filter Include="Scene\Gameplay">
+      <UniqueIdentifier>{776da6e3-0d9b-4c60-9d2a-398fda5f4fbb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Gameplay">
-      <UniqueIdentifier>{e2546144-96f8-4637-a8bd-5ba5f81c146a}</UniqueIdentifier>
+    <Filter Include="Scene\Menu">
+      <UniqueIdentifier>{308b0919-a4cc-4d30-aab4-1750b29c3fe9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Creditos">
-      <UniqueIdentifier>{32150f94-b918-4d55-980f-bed23df3c988}</UniqueIdentifier>
+    <Filter Include="Scene\Gameplay\Game">
+      <UniqueIdentifier>{a79219da-d086-44a5-9dd9-1aaae2f0fee0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Player">
-      <UniqueIdentifier>{3c0d497f-51d9-41a3-b47b-0535834dc7bd}</UniqueIdentifier>
+    <Filter Include="Scene\Gameplay\Parallax">
+      <UniqueIdentifier>{76af7788-9add-4b16-9866-c37dbd38cbf6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Backgorund">
-      <UniqueIdentifier>{b6e9b92f-2f0d-44af-91ff-ca3346e87297}</UniqueIdentifier>
+    <Filter Include="Scene\Gameplay\Player">
+      <UniqueIdentifier>{d7e0836b-418a-4650-a037-11ac05cdc075}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Gameplay\Tube">
+      <UniqueIdentifier>{31bd835e-d244-432f-9ef0-ee00f7b3c156}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="General\TextureX">
+      <UniqueIdentifier>{6643c20a-e748-463e-bbed-94d324387475}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Gameplay\Player\Player Class">
+      <UniqueIdentifier>{32383bd6-b050-4cae-8748-ad6effeeacb9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="game.cpp">
-      <Filter>GameManager</Filter>
+    <ClCompile Include="src\General\Extern\extern.cpp">
+      <Filter>General</Filter>
     </ClCompile>
-    <ClCompile Include="menu.cpp">
-      <Filter>Menu</Filter>
+    <ClCompile Include="src\Scenes\Credits\credits.cpp">
+      <Filter>Scene\Credits</Filter>
     </ClCompile>
-    <ClCompile Include="credits.cpp">
-      <Filter>Creditos</Filter>
+    <ClCompile Include="src\Scenes\Menu\menu.cpp">
+      <Filter>Scene\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="gameplay.cpp">
-      <Filter>Gameplay</Filter>
+    <ClCompile Include="src\Scenes\Gameplay\gameplay.cpp">
+      <Filter>Scene\Gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="player.cpp">
-      <Filter>Player</Filter>
+    <ClCompile Include="src\Scenes\Gameplay\Game\game.cpp">
+      <Filter>Scene\Gameplay\Game</Filter>
     </ClCompile>
-    <ClCompile Include="paralax.cpp">
-      <Filter>Backgorund</Filter>
+    <ClCompile Include="src\Scenes\Gameplay\Parallax\parallax.cpp">
+      <Filter>Scene\Gameplay\Parallax</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\Gameplay\Player\player.cpp">
+      <Filter>Scene\Gameplay\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\Gameplay\Tube\tube.cpp">
+      <Filter>Scene\Gameplay\Tube</Filter>
+    </ClCompile>
+    <ClCompile Include="src\General\TextureX\textureX.cpp">
+      <Filter>General\TextureX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scenes\Gameplay\Player\PlayerStruct\playerStruct.cpp">
+      <Filter>Scene\Gameplay\Player\Player Class</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game.h">
-      <Filter>GameManager</Filter>
+    <ClInclude Include="src\General\Enums\enums.h">
+      <Filter>General</Filter>
     </ClInclude>
-    <ClInclude Include="menu.h">
-      <Filter>Menu</Filter>
+    <ClInclude Include="src\General\Extern\extern.h">
+      <Filter>General</Filter>
     </ClInclude>
-    <ClInclude Include="credits.h">
-      <Filter>Creditos</Filter>
+    <ClInclude Include="src\Scenes\Credits\credits.h">
+      <Filter>Scene\Credits</Filter>
     </ClInclude>
-    <ClInclude Include="gameplay.h">
-      <Filter>Gameplay</Filter>
+    <ClInclude Include="src\Scenes\Menu\menu.h">
+      <Filter>Scene\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="enums.h">
-      <Filter>Archivos de origen</Filter>
+    <ClInclude Include="src\Scenes\Gameplay\gameplay.h">
+      <Filter>Scene\Gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>Player</Filter>
+    <ClInclude Include="src\Scenes\Gameplay\Game\game.h">
+      <Filter>Scene\Gameplay\Game</Filter>
     </ClInclude>
-    <ClInclude Include="paralax.h">
-      <Filter>Backgorund</Filter>
+    <ClInclude Include="src\Scenes\Gameplay\Parallax\parallax.h">
+      <Filter>Scene\Gameplay\Parallax</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scenes\Gameplay\Player\player.h">
+      <Filter>Scene\Gameplay\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scenes\Gameplay\Tube\tube.h">
+      <Filter>Scene\Gameplay\Tube</Filter>
+    </ClInclude>
+    <ClInclude Include="src\General\TextureX\textureX.h">
+      <Filter>General\TextureX</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scenes\Gameplay\Player\PlayerStruct\playerStruct.h">
+      <Filter>Scene\Gameplay\Player\Player Class</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
